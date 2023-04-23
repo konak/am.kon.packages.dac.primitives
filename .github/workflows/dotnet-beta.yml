@@ -29,14 +29,10 @@ jobs:
     - name: Pack
       run: dotnet pack --no-build --no-restore --configuration Release
     - name: ls1
-      run: ls -la ./
+      run: ls -la ./src/
     - name: ls2
-      run: ls -la /home/
+      run: ls -la /src/am.kon.packages.dac.primitives/
     - name: ls3
-      run: ls -la /home/runner/
-    - name: ls4
-      run: ls -la /home/runner/work/
-    - name: ls5
-      run: ls -la /home/runner/work/am.kon.packages.dac.primitives/
+      run: ls -la /home/runner/work/am.kon.packages.dac.primitives/am.kon.packages.dac.primitives/
     - name: Push
       run: dotnet nuget push /home/runner/work/am.kon.packages.dac.primitives/am.kon.packages.dac.primitives/src/am.kon.packages.dac.primitives/bin/Release/am.kon.packages.dac.primitives.*.nupkg --api-key ${{ secrets.NUGET_PUBLISH_SECRET }} --source https://api.nuget.org/v3/index.json --skip-duplicate
