@@ -20,6 +20,11 @@ namespace am.kon.packages.dac.primitives.Exceptions
         /// </summary>
         public object ReturnedObject { get; }
 
+        /// <summary>
+        /// Constructor returning instance of <see cref="DacSqlExecutionReturnedErrorCodeException"/>
+        /// </summary>
+        /// <param name="retCode">Return code after SQL command execution</param>
+        /// <param name="returnedObject">Object returned after SQL command execution</param>
         public DacSqlExecutionReturnedErrorCodeException(int retCode, object returnedObject = null)
             : base(Messages.SQL_EXECUTION_RETURNED_NON_ZERO_CODE + retCode)
         {
