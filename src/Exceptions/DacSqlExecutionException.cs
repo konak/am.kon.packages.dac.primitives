@@ -1,6 +1,4 @@
-﻿using System;
-using System.Resources;
-using am.kon.packages.dac.primitives.Constants.Exception;
+﻿using am.kon.packages.dac.primitives.Constants.Exception;
 
 namespace am.kon.packages.dac.primitives.Exceptions
 {

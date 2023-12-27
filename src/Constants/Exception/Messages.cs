@@ -1,5 +1,4 @@
-﻿using System;
-namespace am.kon.packages.dac.primitives.Constants.Exception
+﻿namespace am.kon.packages.dac.primitives.Constants.Exception
 {
 	/// <summary>
 	/// Static class containing messages used in exceptions of the DAC component

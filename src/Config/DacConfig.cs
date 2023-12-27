@@ -1,10 +1,9 @@
-﻿using System;
-namespace am.kon.packages.dac.primitives.Config
+﻿namespace am.kon.packages.dac.primitives.Config
 {
-	/// <summary>
-	/// Class used to work with configuration of Data Access Component
-	/// </summary>
-	public class DacConfig
+    /// <summary>
+    /// Class used to work with configuration of Data Access Component
+    /// </summary>
+    public class DacConfig
 	{
 		/// <summary>
 		/// Data Access Component configuration default name
