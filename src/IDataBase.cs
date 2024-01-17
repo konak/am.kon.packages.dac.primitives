@@ -9,7 +9,7 @@ namespace am.kon.packages.dac.primitives
     /// <summary>
     /// Interface describing object to interact with database
     /// </summary>
-	interface IDataBase
+	public interface IDataBase
 	{
         /// <summary>
         /// Connection string of <see cref="IDataBase"/> connection
