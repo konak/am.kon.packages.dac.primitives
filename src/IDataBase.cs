@@ -9,7 +9,7 @@ namespace am.kon.packages.dac.primitives
     /// <summary>
     /// Interface describing object to interact with database
     /// </summary>
-	public interface IDataBase
+	interface IDataBase
 	{
         /// <summary>
         /// Connection string of <see cref="IDataBase"/> connection
@@ -178,7 +178,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code.</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public Task<IDataReader> ExecuteReaderAsync(string sql, IDataParameter[] parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true);
+        Task<IDataReader> ExecuteReaderAsync(string sql, IDataParameter[] parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true);
 
         /// <summary>
         /// Execute SQL command asyncronously and return <see cref="IDataReader"/> object to read data
@@ -193,7 +193,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public Task<IDataReader> ExecuteReaderAsync(string sql, KeyValuePair<string, Object>[] parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true);
+        Task<IDataReader> ExecuteReaderAsync(string sql, KeyValuePair<string, Object>[] parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true);
 
         /// <summary>
         /// Execute SQL command asyncronously and return <see cref="IDataReader"/> object to read data
@@ -208,7 +208,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public Task<IDataReader> ExecuteReaderAsync(string sql, List<KeyValuePair<string, Object>> parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true);
+        Task<IDataReader> ExecuteReaderAsync(string sql, List<KeyValuePair<string, Object>> parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true);
 
         /// <summary>
         /// Execute SQL command asyncronously and return <see cref="IDataReader"/> object to read data
@@ -223,7 +223,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public Task<IDataReader> ExecuteReaderAsync(string sql, DacSqlParameters parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true);
+        Task<IDataReader> ExecuteReaderAsync(string sql, DacSqlParameters parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true);
 
         /// <summary>
         /// Execute SQL command asyncronously and return <see cref="IDataReader"/> object to read data
@@ -238,7 +238,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public Task<IDataReader> ExecuteReaderAsync(string sql, dynamic parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true);
+        Task<IDataReader> ExecuteReaderAsync(string sql, dynamic parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true);
 
         /// <summary>
         /// Execute SQL command asyncronously and return <see cref="IDataReader"/> object to read data
@@ -253,7 +253,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public Task<IDataReader> ExecuteReaderAsync<T>(string sql, T parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true);
+        Task<IDataReader> ExecuteReaderAsync<T>(string sql, T parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true);
 
         #endregion
 
@@ -274,7 +274,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public DataSet GetDataSet(string sql, IDataParameter[] parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        DataSet GetDataSet(string sql, IDataParameter[] parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         /// <summary>
         /// Get new dataset for specified SQL command or stored procedure
@@ -291,7 +291,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public DataSet GetDataSet(string sql, KeyValuePair<string, Object>[] parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        DataSet GetDataSet(string sql, KeyValuePair<string, Object>[] parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         /// <summary>
         /// Get new dataset for specified SQL command or stored procedure
@@ -308,7 +308,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public DataSet GetDataSet(string sql, List<KeyValuePair<string, Object>> parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        DataSet GetDataSet(string sql, List<KeyValuePair<string, Object>> parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         /// <summary>
         /// Get new dataset for specified SQL command or stored procedure
@@ -325,7 +325,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public DataSet GetDataSet(string sql, DacSqlParameters parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        DataSet GetDataSet(string sql, DacSqlParameters parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         /// <summary>
         /// Get new dataset for specified SQL command or stored procedure
@@ -342,7 +342,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public DataSet GetDataSet(string sql, dynamic parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        DataSet GetDataSet(string sql, dynamic parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         /// <summary>
         /// Get new dataset for specified SQL command or stored procedure
@@ -359,7 +359,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public DataSet GetDataSet<T>(string sql, T parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        DataSet GetDataSet<T>(string sql, T parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         #endregion
 
@@ -380,7 +380,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public void FillDataSet(DataSet ds, string sql, IDataParameter[] parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        void FillDataSet(DataSet ds, string sql, IDataParameter[] parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         /// <summary>
         /// Fill provided DataSet item with values from executed SQL command
@@ -397,7 +397,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public void FillDataSet(DataSet ds, string sql, KeyValuePair<string, Object>[] parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        void FillDataSet(DataSet ds, string sql, KeyValuePair<string, Object>[] parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         /// <summary>
         /// Fill provided DataSet item with values from executed SQL command
@@ -414,7 +414,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public void FillDataSet(DataSet ds, string sql, List<KeyValuePair<string, Object>> parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        void FillDataSet(DataSet ds, string sql, List<KeyValuePair<string, Object>> parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         /// <summary>
         /// Fill provided DataSet item with values from executed SQL command
@@ -431,7 +431,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public void FillDataSet(DataSet ds, string sql, DacSqlParameters parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        void FillDataSet(DataSet ds, string sql, DacSqlParameters parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         /// <summary>
         /// Fill provided DataSet item with values from executed SQL command
@@ -448,7 +448,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public void FillDataSet(DataSet ds, string sql, dynamic parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        void FillDataSet(DataSet ds, string sql, dynamic parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         /// <summary>
         /// Fill provided DataSet item with values from executed SQL command
@@ -465,7 +465,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public void FillDataSet<T>(DataSet ds, string sql, T parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        void FillDataSet<T>(DataSet ds, string sql, T parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
         #endregion
 
         #region GetDataTable
@@ -485,7 +485,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public DataTable GetDataTable(string sql, IDataParameter[] parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        DataTable GetDataTable(string sql, IDataParameter[] parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         /// <summary>
         /// Get new DataTable for specified sql command
@@ -502,7 +502,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public DataTable GetDataTable(string sql, KeyValuePair<string, Object>[] parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        DataTable GetDataTable(string sql, KeyValuePair<string, Object>[] parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         /// <summary>
         /// Get new DataTable for specified sql command
@@ -519,7 +519,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public DataTable GetDataTable(string sql, List<KeyValuePair<string, Object>> parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        DataTable GetDataTable(string sql, List<KeyValuePair<string, Object>> parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         /// <summary>
         /// Get new DataTable for specified sql command
@@ -536,7 +536,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public DataTable GetDataTable(string sql, DacSqlParameters parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        DataTable GetDataTable(string sql, DacSqlParameters parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         /// <summary>
         /// Get new DataTable for specified sql command
@@ -553,7 +553,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public DataTable GetDataTable(string sql, dynamic parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        DataTable GetDataTable(string sql, dynamic parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         /// <summary>
         /// Get new DataTable for specified sql command
@@ -570,7 +570,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public DataTable GetDataTable<T>(string sql, T parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        DataTable GetDataTable<T>(string sql, T parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         #endregion
 
@@ -591,7 +591,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public void FillDataTable(DataTable dt, string sql, IDataParameter[] parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        void FillDataTable(DataTable dt, string sql, IDataParameter[] parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         /// <summary>
         /// Fill provided DataTable item with SQL command values
@@ -608,7 +608,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public void FillDataTable(DataTable dt, string sql, KeyValuePair<string, Object>[] parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        void FillDataTable(DataTable dt, string sql, KeyValuePair<string, Object>[] parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         /// <summary>
         /// Fill provided DataTable item with SQL command values
@@ -625,7 +625,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public void FillDataTable(DataTable dt, string sql, List<KeyValuePair<string, Object>> parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        void FillDataTable(DataTable dt, string sql, List<KeyValuePair<string, Object>> parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         /// <summary>
         /// Fill provided DataTable item with SQL command values
@@ -642,7 +642,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public void FillDataTable(DataTable dt, string sql, DacSqlParameters parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        void FillDataTable(DataTable dt, string sql, DacSqlParameters parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         /// <summary>
         /// Fill provided DataTable item with SQL command values
@@ -659,7 +659,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public void FillDataTable(DataTable dt, string sql, dynamic parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        void FillDataTable(DataTable dt, string sql, dynamic parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         /// <summary>
         /// Fill provided DataTable item with SQL command values
@@ -676,7 +676,7 @@ namespace am.kon.packages.dac.primitives
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
         /// <exception cref="DacSqlExecutionReturnedErrorCodeException">Throws if SQL query or stored procedure has returned non zero code</exception>
         /// <exception cref="DacGenericException">Throws if any Generic exception has accured</exception>
-        public void FillDataTable<T>(DataTable dt, string sql, T parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
+        void FillDataTable<T>(DataTable dt, string sql, T parameters, CommandType commandType = CommandType.Text, bool throwDBException = true, bool throwGenericException = true, bool throwSystemException = true, int startRecord = 0, int maxRecords = 0);
 
         #endregion
 

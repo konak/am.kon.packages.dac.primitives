@@ -1,24 +1,26 @@
 ﻿using System;
 namespace am.kon.packages.dac.primitives.Exceptions
 {
-	/// <summary>
-	/// Generic Exception thrown from DAC
-	/// </summary>
-	public class DacGenericException : Exception
+    /// <summary>
+    /// Represents the base exception class for all Data Access Component (DAC) related errors.
+    /// This generic exception serves as a foundation for more specific DAC exceptions.
+    /// </summary>
+    public class DacGenericException : Exception
 	{
         /// <summary>
-        /// Default constructor to create instance of <see cref="DacGenericException"/>.
+        /// Initializes a new instance of the <see cref="DacGenericException"/> class without any message.
         /// </summary>
         public DacGenericException() : base() { }
 
         /// <summary>
-        /// Constructor creating instance of the <see cref="DacGenericException"/>.
+        /// Initializes a new instance of the <see cref="DacGenericException"/> class with a specified error message.
         /// </summary>
         /// <param name="errorMessage">Error message describing exception</param>
 		public DacGenericException(string errorMessage) : base(errorMessage) { }
 
         /// <summary>
-        /// Constructor creating instance of the <see cref="DacGenericException"/>.
+        /// Initializes a new instance of the <see cref="DacGenericException"/> class with a specified
+        /// error message and a reference to the inner exception that is the cause of this exception.
         /// </summary>
         /// <param name="errorMessage">Error message describing exception</param>
         /// <param name="innerException">Inner exception.</param>

@@ -3,8 +3,9 @@
 namespace am.kon.packages.dac.primitives.Exceptions
 {
     /// <summary>
-    /// Exception fired when the stored procedure returns not zero code,
-    /// and it means that an error has accured during storedprocedure execution
+    /// Exception thrown when a SQL stored procedure executed within the
+    /// DAC returns a non-zero error code, indicating an execution failure.
+    /// This exception provides additional details such as the return code and any object returned by the procedure.
     /// </summary>
 	public class DacSqlExecutionReturnedErrorCodeException : DacSqlExecutionException
 	{
@@ -19,7 +20,8 @@ namespace am.kon.packages.dac.primitives.Exceptions
         public object ReturnedObject { get; }
 
         /// <summary>
-        /// Constructor returning instance of <see cref="DacSqlExecutionReturnedErrorCodeException"/>
+        /// Initializes a new instance of the <see cref="DacSqlExecutionReturnedErrorCodeException"/> class
+        /// with the specified return code from the SQL command and an optional object returned from the stored procedure.
         /// </summary>
         /// <param name="retCode">Return code after SQL command execution</param>
         /// <param name="returnedObject">Object returned after SQL command execution</param>
