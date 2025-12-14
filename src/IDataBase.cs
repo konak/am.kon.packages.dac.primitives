@@ -2,7 +2,6 @@
 using System.Data;
 using System.Threading.Tasks;
 using am.kon.packages.dac.primitives.Exceptions;
-using am.kon.packages.dac.primitives.Exceptions;
 
 namespace am.kon.packages.dac.primitives
 {
@@ -30,7 +29,7 @@ namespace am.kon.packages.dac.primitives
         /// <typeparam name="T">The type of the result returned by the batch execution.</typeparam>
         /// <param name="batch">A function that encapsulates the logic for executing the batch of SQL commands.</param>
         /// <param name="closeConnection">Specifies whether the database connection should be closed after execution.</param>
-        /// <param name="throwDbException">Indicates whether a database-related exception should be thrown if an error occurs.</param>
+        /// <param name="throwDBException">Indicates whether a database-related exception should be thrown if an error occurs.</param>
         /// <param name="throwGenericException">Indicates whether a generic exception should be thrown if an error occurs.</param>
         /// <param name="throwSystemException">Indicates whether a system exception should be thrown if an error occurs.</param>
         /// <returns>A task representing the asynchronous operation, with the result of type <typeparamref name="T"/>.</returns>
@@ -194,6 +193,9 @@ namespace am.kon.packages.dac.primitives
         /// <param name="sql">SQL command text to be executed</param>
         /// <param name="commandType">SQL command type to execute</param>
         /// <param name="parameters">Parameters of the SQL command</param>
+        /// <param name="throwDBException">Indicates whether database-specific exceptions should be thrown. Default is true.</param>
+        /// <param name="throwGenericException">Indicates whether generic exceptions should be thrown. Default is true.</param>
+        /// <param name="throwSystemException">Indicates whether system-level exceptions should be thrown. Default is true.</param>
         /// <param name="startRecord">The zero based record number to start with</param>
         /// <param name="maxRecords">The maximum number of records to retrive</param>
         /// <exception cref="DacSqlExecutionException">Throws if any SqlException has accured</exception>
@@ -336,4 +338,3 @@ namespace am.kon.packages.dac.primitives
         #endregion
     }
 }
-
