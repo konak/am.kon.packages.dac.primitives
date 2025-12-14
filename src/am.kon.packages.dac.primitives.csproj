@@ -7,12 +7,13 @@
     <ReleaseVersion>0.1.0.5</ReleaseVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>am.kon.packages.dac.primitives</PackageId>
-    <PackageVersion>0.1.0.7</PackageVersion>
+    <PackageVersion>0.1.0.8</PackageVersion>
     <Authors>Konakov Sergey</Authors>
     <Description>Package containing primitives, used in data access component library</Description>
     <RepositoryUrl>https://github.com/konak/am.kon.packages.dac.primitives</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>dac primitives am.kon konak</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -29,5 +30,9 @@
     <Folder Include="Exceptions\" />
     <Folder Include="Constants\" />
     <Folder Include="Constants\Exception\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>
